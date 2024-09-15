@@ -1,76 +1,132 @@
+/* General Container Styling */
 .movie-list-container {
   padding: 20px;
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to right, #141E30, #243B55);
+  color: #f0f0f0;
 }
 
 h1 {
   text-align: center;
-  color: #333;
+  color: #f8f9fa;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  letter-spacing: 2px;
 }
 
+/* Movies Grid Layout */
 .movies-grid, .movies-details-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
+  justify-content: center;
 }
 
+/* Movie Cards Styling */
 .movie-card, .movie-detail-card {
-  background-color: #f8f9fa;
-  border: 1px solid #dee2e6;
-  border-radius: 10px;
-  padding: 15px;
-  width: 100%;
-  max-width: 400px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #1c1c1c;
+  border: none;
+  border-radius: 15px;
+  padding: 20px;
+  color: #f0f0f0;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+.movie-card:hover, .movie-detail-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Movie Titles and Description Styling */
 h2 {
-  color: #007bff;
+  color: #00d9ff;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
 }
 
 p {
-  color: #555;
-  font-size: 14px;
+  color: #b3b3b3;
+  font-size: 1rem;
+  margin-bottom: 15px;
 }
 
+/* Cast Info Styling */
+.movie-detail-card p strong {
+  color: #00d9ff;
+  font-weight: bold;
+}
+
+/* Cinema Info Styling */
 .cinema-info {
-  margin-top: 10px;
+  margin-top: 15px;
+  background-color: #2a2a2a;
+  padding: 10px;
+  border-radius: 10px;
 }
 
 .session-info {
-  margin: 5px 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 8px 0 ;
 }
 
 .session-time {
-  background-color: #007bff;
-  color: white;
-  padding: 5px 10px;
+  background-color: #00d9ff;
+  margin: 10px;
+  color: #1c1c1c;
+  padding: 8px 12px;
   border-radius: 5px;
   margin-right: 5px;
+  font-weight: bold;
 }
 
-.trailer-btn {
-  background-color: #28a745;
-  color: white;
-  padding: 10px;
+/* Trailer Video Embedding */
+.trailer-video {
+  margin-top: 15px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.trailer-video iframe {
+  width: 100%;
+  height: 200px;
   border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 10px;
+  border-radius: 10px;
 }
 
-.trailer-btn:hover {
-  background-color: #218838;
-}
-
+/* Responsive Design */
 @media (max-width: 768px) {
-  .movies-grid, .movies-details-grid {
+
+  .movies-grid{
+    display: flex;
     flex-direction: column;
-    align-items: center;
+    width: 90%;
+  }
+
+  .movies-details-grid{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+  }
+
+
+  h1 {
+    font-size: 2rem;
   }
 
   .movie-card, .movie-detail-card {
-    width: 90%;
+    width: 100%;
+  }
+
+  .trailer-video iframe {
+    height: 180px;
+  }
+
+  .session-info{
+    display: flex;
+    flex-direction: column;
+    /* width: 20%; */
   }
 }
